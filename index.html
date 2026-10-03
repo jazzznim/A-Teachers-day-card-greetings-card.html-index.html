@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#0b3d2e" />
+  <title>Happy Teachers' Day | Message Card</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="ambient ambient-one"></div>
+  <div class="ambient ambient-two"></div>
+  <div class="sparkles" id="sparkles"></div>
+
+  <header class="topbar">
+    <div class="brand"><span>✦</span> TEACHERS' DAY</div>
+    <button class="customize-toggle" id="customizeToggle" type="button">Customize Card</button>
+  </header>
+
+  <main class="page">
+    <section class="intro">
+      <p class="eyebrow">A LITTLE BOOK OF GRATITUDE</p>
+      <h1>For the teacher<br><em>who inspires.</em></h1>
+      <p class="intro-text">
+        Open this little book to reveal a personal Teachers' Day message.
+        You can change the message, photo, colors, and optional music anytime.
+      </p>
+      <button class="open-card" id="openCard" type="button">
+        <span>OPEN THE CARD</span><b>→</b>
+      </button>
+      <p class="tip">Click the cover or button • swipe/drag the pages on touch screens</p>
+    </section>
+
+    <section class="book-stage" aria-label="Animated Teachers' Day card">
+      <div class="book-shadow"></div>
+      <div class="book" id="book">
+        <div class="book-cover" id="bookCover">
+          <div class="cover-decoration">✦</div>
+          <p>WITH GRATITUDE</p>
+          <h2>Happy<br><span>Teachers' Day</span></h2>
+          <div class="cover-line"></div>
+          <small>Open a page of appreciation</small>
+          <div class="cover-badge">2026</div>
+        </div>
+
+        <div class="book-page page-back">
+          <div class="page-inner">
+            <p class="page-kicker">A MESSAGE FOR YOU</p>
+            <h3 id="pageTitle">Dear Teacher,</h3>
+            <div class="message" id="messageDisplay"></div>
+            <div class="signature">
+              <span>With respect & gratitude,</span>
+              <strong id="senderDisplay">Your Student</strong>
+            </div>
+          </div>
+        </div>
+
+        <div class="book-page page-front">
+          <div class="page-inner photo-page">
+            <div class="photo-wrap">
+              <img id="teacherPhoto" src="teacher-photo.jpg" alt="Teacher photo" />
+              <div class="photo-glow"></div>
+            </div>
+            <p class="photo-caption" id="photoCaption">A teacher worth celebrating</p>
+            <div class="page-number">01</div>
+          </div>
+        </div>
+
+        <div class="book-spine"></div>
+      </div>
+
+      <div class="book-controls">
+        <button id="prevPage" type="button" aria-label="Previous page">←</button>
+        <span id="pageStatus">COVER</span>
+        <button id="nextPage" type="button" aria-label="Next page">→</button>
+      </div>
+    </section>
+  </main>
+
+  <section class="customizer" id="customizer" aria-hidden="true">
+    <div class="customizer-card">
+      <button class="close-customizer" id="closeCustomizer" type="button" aria-label="Close customization">×</button>
+      <div class="customizer-header">
+        <p class="eyebrow">MAKE IT YOURS</p>
+        <h2>Customize your card</h2>
+        <p>Everything stays in your browser. You can replace the photo and audio without editing the code.</p>
+      </div>
+
+      <div class="form-grid">
+        <label>
+          Teacher's name
+          <input id="teacherName" type="text" value="Teacher" maxlength="60" />
+        </label>
+        <label>
+          Your name
+          <input id="senderName" type="text" value="Your Student" maxlength="60" />
+        </label>
+        <label class="full">
+          Message
+          <textarea id="messageInput" rows="7" maxlength="1200">Happy Teachers’ Day! Thank you for your patience, guidance, and dedication. Your lessons inspire us to learn, grow, and become better every day. We truly appreciate everything you do! ❤️📚</textarea>
+        </label>
+        <label>
+          Add / replace photo
+          <input id="photoInput" type="file" accept="image/*" />
+        </label>
+        <label>
+          Add optional audio
+          <input id="audioInput" type="file" accept="audio/*" />
+        </label>
+        <label>
+          Accent color
+          <input id="accentInput" type="color" value="#d8b36a" />
+        </label>
+        <label>
+          Photo caption
+          <input id="captionInput" type="text" value="A teacher worth celebrating" maxlength="80" />
+        </label>
+      </div>
+
+      <div class="customizer-actions">
+        <button class="primary" id="applyChanges" type="button">Apply Changes</button>
+        <button class="secondary" id="resetChanges" type="button">Reset</button>
+        <label class="audio-button">
+          <input id="playAudioToggle" type="checkbox" />
+          <span>🔊 Play attached audio</span>
+        </label>
+      </div>
+      <audio id="cardAudio" controls preload="metadata"></audio>
+      <p class="privacy-note">Tip: Audio playback may require a click because browsers block automatic sound on some devices.</p>
+    </div>
+  </section>
+
+  <footer>
+    <span>Made with appreciation for teachers.</span>
+    <span>HTML • CSS • JavaScript</span>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
